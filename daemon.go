@@ -18,6 +18,7 @@ import (
 var _ OracleClient = (*PriceDaemon)(nil)
 
 type WithTrailer interface {
+	OracleClient
 	PricesWithTrailer(context.Context, *types.QueryPricesRequest, ...grpc.CallOption) (*types.QueryPricesResponse, metadata.MD, error)
 }
 
